@@ -1,0 +1,37 @@
+﻿<mah:MetroWindow
+    x:Class="SkyWalker_WPF.Views.LoginWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:SkyWalker_WPF.Views"
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="LoginWindow"
+    Width="512"
+    Height="384"
+    WindowStartupLocation="CenterScreen"
+    AllowsTransparency="True"
+    Background="Transparent"
+    TitleBarHeight="0"
+    mc:Ignorable="d">
+    <mah:MetroWindow.Clip>
+        <EllipseGeometry
+            Center="256,192"
+            RadiusX="256"
+            RadiusY="192" />
+    </mah:MetroWindow.Clip>
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Canvas>
+            <Path
+                Canvas.Left="204.472"
+                Canvas.Top="66.257"
+                Data="{StaticResource SkyWalkerLogo}"
+                Fill="{StaticResource SkyWalkerLogoBrush}" />
+        </Canvas>
+
+    </Grid>
+</mah:MetroWindow>

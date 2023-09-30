@@ -1,0 +1,138 @@
+﻿<mah:MetroWindow
+    x:Class="SkyWalker_WPF.Views.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:local="clr-namespace:SkyWalker_WPF.Views"
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:SkyWalker_WPF.ViewModels"
+    Title="MainWindow"
+    Width="1024"
+    Height="768"
+    MaxHeight="{x:Static SystemParameters.PrimaryScreenHeight}"
+    d:DataContext="{d:DesignInstance vm:MainViewModel}"
+    AllowsTransparency="True"
+    Background="Transparent"
+    BorderBrush="Transparent"
+    BorderThickness="8"
+    TitleBarHeight="0"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <WindowChrome.WindowChrome>
+        <WindowChrome
+            CaptionHeight="1"
+            CornerRadius="0"
+            GlassFrameThickness="0"
+            ResizeBorderThickness="4" />
+    </WindowChrome.WindowChrome>
+    <Border
+        Background="White"
+        ClipToBounds="True"
+        CornerRadius="15">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Border>
+                <DockPanel
+                    Margin="10,20"
+                    LastChildFill="False"
+                    MouseMove="DragMove">
+                    <Image
+                        Width="50"
+                        Height="50"
+                        DockPanel.Dock="Top"
+                        Source="{Binding Avatar}">
+                        <Image.Clip>
+                            <EllipseGeometry
+                                Center="25,25"
+                                RadiusX="25"
+                                RadiusY="25" />
+                        </Image.Clip>
+                    </Image>
+                    <ListBox
+                        x:Name="navi"
+                        DockPanel.Dock="Top"
+                        ItemsSource="{Binding NavigatorItems}">
+                        <ListBox.ItemContainerStyle>
+                            <Style BasedOn="{StaticResource MahApps.Styles.ListBoxItem}" TargetType="ListBoxItem">
+                                <Setter Property="Margin" Value="0,5" />
+                                <Setter Property="Padding" Value="10" />
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                                <Setter Property="mah:ControlsHelper.CornerRadius" Value="15" />
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate DataType="NavigatorItem">
+                                <Border CornerRadius="5">
+                                    <icon:PackIconMaterial
+                                        Width="20"
+                                        Height="20"
+                                        Kind="{Binding Icon}" />
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <StackPanel DockPanel.Dock="Bottom">
+                        <mah:DropDownButton
+                            Width="40"
+                            Height="40"
+                            Padding="0"
+                            HorizontalAlignment="Center"
+                            ArrowVisibility="Collapsed"
+                            BorderThickness="0">
+                            <mah:DropDownButton.Icon>
+                                <icon:Material
+                                    Width="20"
+                                    Height="20"
+                                    Kind="Menu" />
+                            </mah:DropDownButton.Icon>
+                        </mah:DropDownButton>
+                    </StackPanel>
+                </DockPanel>
+            </Border>
+            <Grid Grid.Column="1" Background="WhiteSmoke">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <DockPanel
+                    Background="Transparent"
+                    LastChildFill="False"
+                    MouseMove="DragMove">
+                    <DockPanel.Resources>
+                        <Style BasedOn="{StaticResource MahApps.Styles.Button.Flat}" TargetType="Button">
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="Padding" Value="10" />
+                        </Style>
+                    </DockPanel.Resources>
+                    <Button Click="Close" DockPanel.Dock="Right">
+                        <icon:Material Kind="WindowClose" />
+                    </Button>
+                    <ToggleButton Click="MaximizeOrRestore" DockPanel.Dock="Right">
+                        <ToggleButton.Style>
+                            <Style BasedOn="{StaticResource MahApps.Styles.ToggleButton.Flat}" TargetType="ToggleButton">
+                                <Setter Property="Background" Value="Transparent" />
+                                <Setter Property="BorderThickness" Value="0" />
+                                <Setter Property="Padding" Value="10" />
+                            </Style>
+                        </ToggleButton.Style>
+                        <icon:Material Kind="WindowMaximize" />
+                    </ToggleButton>
+                    <Button Click="Minimize" DockPanel.Dock="Right">
+                        <icon:Material Kind="WindowMinimize" />
+                    </Button>
+                </DockPanel>
+                <Border Grid.Row="1">
+                    <ContentControl x:Name="MainView" />
+                </Border>
+            </Grid>
+
+        </Grid>
+    </Border>
+</mah:MetroWindow>
