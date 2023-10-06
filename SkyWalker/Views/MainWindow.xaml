@@ -12,15 +12,10 @@
     Title="MainWindow"
     Width="1024"
     Height="768"
-    MaxHeight="{x:Static SystemParameters.PrimaryScreenHeight}"
     d:DataContext="{d:DesignInstance vm:MainViewModel}"
-    AllowsTransparency="True"
-    Background="Transparent"
     BorderBrush="Transparent"
-    BorderThickness="8"
     TitleBarHeight="0"
     WindowStartupLocation="CenterScreen"
-    WindowStyle="None"
     mc:Ignorable="d">
     <WindowChrome.WindowChrome>
         <WindowChrome
@@ -83,9 +78,9 @@
                             Width="40"
                             Height="40"
                             Padding="0"
-                            Background="WhiteSmoke"
                             HorizontalAlignment="Center"
                             ArrowVisibility="Collapsed"
+                            Background="WhiteSmoke"
                             BorderThickness="0">
                             <mah:DropDownButton.Icon>
                                 <icon:Material

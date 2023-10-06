@@ -35,7 +35,7 @@ namespace SkyWalker_WPF.Views
         }
         private void Close(object sender, RoutedEventArgs e)
         {
-            Environment.Exit(0);
+            App.Current.Shutdown();
         }
 
         private void DragMove(object sender, MouseEventArgs e)

@@ -18,7 +18,7 @@ using System.Windows.Controls;
 
 namespace SkyWalker_WPF.ViewModels
 {
-    public partial class LoginViewModel:ObservableObject
+    public partial class LoginWindowViewModel:ObservableObject
     {
         private HttpClient httpClient=new();
 
@@ -74,6 +74,8 @@ namespace SkyWalker_WPF.ViewModels
             else
             {
                 App.token = content;
+                _window.DialogResult = true;
+                _window.Close();
             }           
         }
 

@@ -21,14 +21,22 @@ namespace SkyWalker_WPF
         public static string token;
         protected override Window CreateShell()
         {
-            return Container.Resolve<LoginWindow>();    
-            return Container.Resolve<MainWindow>();
+            var loginWindow=Container.Resolve<LoginWindow>();
+            var result=loginWindow.ShowDialog();
+            if (result.Value)
+            {
+                return Container.Resolve<MainWindow>();
+            }
+            else
+            {
+                App.Current.Shutdown();
+                return null;
+            }       
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<MainWindow, MainViewModel>();
-            containerRegistry.RegisterForNavigation<LoginWindow, LoginViewModel>();
             containerRegistry.RegisterForNavigation<FamilyView, FamilyViewModel>();
             containerRegistry.RegisterForNavigation<FriendView, FriendViewModel>();
             containerRegistry.RegisterForNavigation<GroupView, GroupViewModel>();
