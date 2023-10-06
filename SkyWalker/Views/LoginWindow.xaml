@@ -3,35 +3,173 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:local="clr-namespace:SkyWalker_WPF.Views"
     xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Name="window"
     Title="LoginWindow"
-    Width="512"
-    Height="384"
-    WindowStartupLocation="CenterScreen"
+    Width="640"
+    Height="420"
     AllowsTransparency="True"
     Background="Transparent"
+    BorderBrush="Transparent"
     TitleBarHeight="0"
+    WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
-    <mah:MetroWindow.Clip>
-        <EllipseGeometry
-            Center="256,192"
-            RadiusX="256"
-            RadiusY="192" />
-    </mah:MetroWindow.Clip>
-    <Grid Background="White">
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        <Canvas>
+    <mah:MetroWindow.Resources>
+        <Style BasedOn="{StaticResource MahApps.Styles.TextBlock}" TargetType="TextBlock">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="mah:ControlsHelper.CornerRadius" Value="3" />
+        </Style>
+        <Style BasedOn="{StaticResource MahApps.Styles.TextBox}" TargetType="TextBox">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="mah:ControlsHelper.CornerRadius" Value="3" />
+        </Style>
+        <Style BasedOn="{StaticResource MahApps.Styles.Button}" TargetType="Button">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="mah:ControlsHelper.CornerRadius" Value="3" />
+        </Style>
+        <Style BasedOn="{StaticResource MahApps.Styles.ComboBox}" TargetType="ComboBox">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="mah:ControlsHelper.CornerRadius" Value="3" />
+        </Style>
+        <Style BasedOn="{StaticResource MahApps.Styles.PasswordBox}" TargetType="PasswordBox">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="mah:ControlsHelper.CornerRadius" Value="3" />
+        </Style>
+    </mah:MetroWindow.Resources>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}" CommandParameter="{Binding ElementName=window}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Border
+        Name="bd"
+        Background="AliceBlue"
+        BorderBrush="Cyan"
+        BorderThickness="3"
+        CornerRadius="300">
+        <Border.Triggers>
+            <EventTrigger RoutedEvent="Loaded">
+                <BeginStoryboard Name="init">
+                    <Storyboard>
+                        <ColorAnimationUsingKeyFrames
+                            AutoReverse="True"
+                            RepeatBehavior="Forever"
+                            Storyboard.TargetName="bd"
+                            Storyboard.TargetProperty="BorderBrush.Color">
+                            <LinearColorKeyFrame KeyTime="0:0:0" Value="Cyan" />
+                            <LinearColorKeyFrame KeyTime="0:0:1" Value="Transparent" />
+                        </ColorAnimationUsingKeyFrames>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Border.Triggers>
+        <Grid>
             <Path
-                Canvas.Left="204.472"
-                Canvas.Top="66.257"
+                Width="600"
+                Height="300"
                 Data="{StaticResource SkyWalkerLogo}"
-                Fill="{StaticResource SkyWalkerLogoBrush}" />
-        </Canvas>
+                Fill="{StaticResource SkyWalkerLogoBrush}"
+                Stretch="Fill" />
 
-    </Grid>
+            <TabControl
+                Background="Transparent"
+                SelectedIndex="{Binding Index}"
+                Style="{StaticResource MahApps.Styles.TabControl.Animated}">
+
+                <TabItem>
+                    <Grid
+                        Width="200"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <ComboBox
+                            mah:TextBoxHelper.UseFloatingWatermark="True"
+                            mah:TextBoxHelper.Watermark="Email/Phone No"
+                            IsEditable="True"
+                            Text="{Binding UserInfo}" />
+                        <PasswordBox
+                            Name="pwd"
+                            Grid.Row="1"
+                            mah:TextBoxHelper.UseFloatingWatermark="True"
+                            mah:TextBoxHelper.Watermark="Password" />
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Button
+                                Command="{Binding SignInCommand}"
+                                CommandParameter="{Binding ElementName=pwd}"
+                                Content="Sign in" />
+                            <Button
+                                Grid.Column="1"
+                                Command="{Binding Index1Command}"
+                                Content="Sign up&gt;&gt;&gt;" />
+                        </Grid>
+                    </Grid>
+                </TabItem>
+
+                <TabItem>
+                    <Grid
+                        Width="200"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Email:" />
+                        <TextBox Grid.Column="1" Text="{Binding Email}" />
+                        <TextBlock Grid.Row="1" Text="PhoneNo:" />
+                        <TextBox
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Text="{Binding PhoneNo}" />
+                        <TextBlock Grid.Row="2" Text="Name:" />
+                        <TextBox
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Text="{Binding Name}" />
+                        <TextBlock Grid.Row="3" Text="Password:" />
+                        <PasswordBox
+                            Name="pwd1"
+                            Grid.Row="3"
+                            Grid.Column="1" />
+                        <Grid Grid.Row="4" Grid.ColumnSpan="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Button Command="{Binding Index0Command}" Content="&lt;&lt;&lt;Sign In" />
+                            <Button
+                                Grid.Column="1"
+                                Command="{Binding SignUpCommand}"
+                                CommandParameter="{Binding ElementName=pwd1}"
+                                Content="Sign Up" />
+                        </Grid>
+                    </Grid>
+                </TabItem>
+
+            </TabControl>
+        </Grid>
+    </Border>
 </mah:MetroWindow>

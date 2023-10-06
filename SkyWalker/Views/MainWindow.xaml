@@ -30,7 +30,7 @@
             ResizeBorderThickness="4" />
     </WindowChrome.WindowChrome>
     <Border
-        Background="White"
+        Background="WhiteSmoke"
         ClipToBounds="True"
         CornerRadius="15">
         <Grid>
@@ -83,6 +83,7 @@
                             Width="40"
                             Height="40"
                             Padding="0"
+                            Background="WhiteSmoke"
                             HorizontalAlignment="Center"
                             ArrowVisibility="Collapsed"
                             BorderThickness="0">
@@ -96,7 +97,7 @@
                     </StackPanel>
                 </DockPanel>
             </Border>
-            <Grid Grid.Column="1" Background="WhiteSmoke">
+            <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto" />
                     <RowDefinition />

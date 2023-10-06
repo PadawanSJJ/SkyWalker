@@ -18,6 +18,7 @@ namespace SkyWalker_WPF
 
     public partial class App : PrismApplication
     {
+        public static string token;
         protected override Window CreateShell()
         {
             return Container.Resolve<LoginWindow>();    

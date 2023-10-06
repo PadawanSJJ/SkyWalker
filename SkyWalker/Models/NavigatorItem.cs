@@ -10,6 +10,7 @@ namespace SkyWalker_WPF.Models
     {
         public string Key { get; set; }
         public string Icon { get; set; }
+        public int Notification { get; set; }
 
     }
 }

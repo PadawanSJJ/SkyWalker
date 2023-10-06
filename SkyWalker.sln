@@ -3,7 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkyWalker", "SkyWalker\SkyWalker.csproj", "{D52C4894-33CE-4BA9-AF00-484ADABEB689}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkyWalker", "SkyWalker\SkyWalker.csproj", "{D52C4894-33CE-4BA9-AF00-484ADABEB689}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkyWalker.Models", "SkyWalker.Models\SkyWalker.Models.csproj", "{91AAD410-D018-4D86-A1D2-469B568EDD8F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkyWalker.IRepository", "SkyWalker.IRepository\SkyWalker.IRepository.csproj", "{4DD6722A-47F3-451D-BF5B-2089A8C066F5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkyWalker.Repository", "SkyWalker.Repository\SkyWalker.Repository.csproj", "{62D4FE1E-9041-471E-8E65-247AA39FE576}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkyWalker.IService", "SkyWalker.IService\SkyWalker.IService.csproj", "{2CC43B66-31A4-4B8F-834F-86BD90E40C59}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkyWalker.Service", "SkyWalker.Service\SkyWalker.Service.csproj", "{354ECFA2-C0B7-4E1D-8E60-D4CB132B99A2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkyWalker.WebApi", "SkyWalker.WebApi\SkyWalker.WebApi.csproj", "{B94ECA16-46EB-418A-A66D-4A4E8429E04F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkyWalker.JWT", "SkyWalker.JWT\SkyWalker.JWT.csproj", "{75EF1C85-8EFF-4D7B-9F5E-0ECC512E4F3D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityService", "IdentityService", "{BB882FE1-DE23-49F2-A9EA-1F6BBA72560F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity.WebApi", "Identity.WebApi\Identity.WebApi.csproj", "{1C244AD0-0E0C-4106-B8C5-E4157599241D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{970A9D29-169F-496D-978E-6130634C9DA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkyWalker.Common", "SkyWalker.Common\SkyWalker.Common.csproj", "{F188DC19-E6D5-47DA-8040-B5B29FE8EB3F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +37,49 @@ Global
 		{D52C4894-33CE-4BA9-AF00-484ADABEB689}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D52C4894-33CE-4BA9-AF00-484ADABEB689}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D52C4894-33CE-4BA9-AF00-484ADABEB689}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91AAD410-D018-4D86-A1D2-469B568EDD8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91AAD410-D018-4D86-A1D2-469B568EDD8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91AAD410-D018-4D86-A1D2-469B568EDD8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91AAD410-D018-4D86-A1D2-469B568EDD8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DD6722A-47F3-451D-BF5B-2089A8C066F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DD6722A-47F3-451D-BF5B-2089A8C066F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DD6722A-47F3-451D-BF5B-2089A8C066F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DD6722A-47F3-451D-BF5B-2089A8C066F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62D4FE1E-9041-471E-8E65-247AA39FE576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62D4FE1E-9041-471E-8E65-247AA39FE576}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62D4FE1E-9041-471E-8E65-247AA39FE576}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62D4FE1E-9041-471E-8E65-247AA39FE576}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CC43B66-31A4-4B8F-834F-86BD90E40C59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CC43B66-31A4-4B8F-834F-86BD90E40C59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CC43B66-31A4-4B8F-834F-86BD90E40C59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CC43B66-31A4-4B8F-834F-86BD90E40C59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{354ECFA2-C0B7-4E1D-8E60-D4CB132B99A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{354ECFA2-C0B7-4E1D-8E60-D4CB132B99A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{354ECFA2-C0B7-4E1D-8E60-D4CB132B99A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{354ECFA2-C0B7-4E1D-8E60-D4CB132B99A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B94ECA16-46EB-418A-A66D-4A4E8429E04F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B94ECA16-46EB-418A-A66D-4A4E8429E04F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B94ECA16-46EB-418A-A66D-4A4E8429E04F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B94ECA16-46EB-418A-A66D-4A4E8429E04F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75EF1C85-8EFF-4D7B-9F5E-0ECC512E4F3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75EF1C85-8EFF-4D7B-9F5E-0ECC512E4F3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75EF1C85-8EFF-4D7B-9F5E-0ECC512E4F3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75EF1C85-8EFF-4D7B-9F5E-0ECC512E4F3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C244AD0-0E0C-4106-B8C5-E4157599241D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C244AD0-0E0C-4106-B8C5-E4157599241D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C244AD0-0E0C-4106-B8C5-E4157599241D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C244AD0-0E0C-4106-B8C5-E4157599241D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F188DC19-E6D5-47DA-8040-B5B29FE8EB3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F188DC19-E6D5-47DA-8040-B5B29FE8EB3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F188DC19-E6D5-47DA-8040-B5B29FE8EB3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F188DC19-E6D5-47DA-8040-B5B29FE8EB3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1C244AD0-0E0C-4106-B8C5-E4157599241D} = {BB882FE1-DE23-49F2-A9EA-1F6BBA72560F}
+		{F188DC19-E6D5-47DA-8040-B5B29FE8EB3F} = {970A9D29-169F-496D-978E-6130634C9DA3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {20EF2C4C-0A69-44F2-91D4-149A4E6E90B8}

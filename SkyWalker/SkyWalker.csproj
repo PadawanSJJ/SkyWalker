@@ -26,6 +26,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SkyWalker.Models\SkyWalker.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Assets\avatar.webp" />
   </ItemGroup>
 
